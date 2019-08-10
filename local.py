@@ -41,9 +41,6 @@ def device_shadow():
     jsonState = json.loads(streamingBody.read())
     return jsonState
 
-@app.route('/v1/device_registration', methods = ["GET"])
-def device_registration():
-    return "True"
 
 def handler(event, context):
     return aws_lambda_wsgi.response(app, event, context)
