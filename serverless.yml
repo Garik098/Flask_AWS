@@ -1,4 +1,4 @@
-service: security_automation
+service: Devices_API
 
 provider:
   name: aws
@@ -8,22 +8,21 @@ provider:
   versionFunctions: false
   stage: ${opt:stage, 'dev'}
   region: ${opt:region, 'us-west-2'}
-  stackName: security-automation-stack
+  stackName: devicesAPI
   apiName: PythonAWS-API-Gateway
   endpointType: REGIONAL
+  role: 'arn:aws:iam::878341639176:role/LambdaIOTRole'
+ 
 
 functions:
-  securityautomation:
+  registration:
     handler: handler.handler
     events:
       - http:
-          path: /
+          path: /device_registration
           method: get
-          description: "default api"
-      - http:
-          path: /v1/security
-          method: get
-          description: "security api"
+          description: "device registration api"
+
 package:
   exclude:
     - .eslintrc.yml
@@ -34,6 +33,8 @@ package:
     - coverage/**
     - README.md
     - local.py
+    - testing.py
+    - test-devices.py
 
 custom:
   wsgi:

@@ -21,3 +21,8 @@ node_modules/
 __pycache__
 package-lock.json
 .serverless
+config.py
+serverless.yml
+local.py
+test-devices.py
+testing.py
