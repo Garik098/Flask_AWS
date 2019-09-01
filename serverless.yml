@@ -11,7 +11,7 @@ provider:
   stackName: devicesAPI
   apiName: PythonAWS-API-Gateway
   endpointType: REGIONAL
-  role: 'arn:aws:iam::878341639176:role/LambdaIOTRole'
+  role: 'arn:aws:iam::xxcxc:role/LambdaIOTRole'
  
 
 functions:
